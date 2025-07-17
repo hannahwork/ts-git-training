@@ -40,3 +40,8 @@ const computeNegativeFibonacci = (position: number): number => {
     const absoluteResult = computeFibonacciNumber(-position);
     return resultIsNegative ? absoluteResult * -1 : absoluteResult;
 }
+
+export const computeFibonacciArray = (start: number, endInclusive: number): number[] => {
+    const inputArray = [...Array(endInclusive - start + 1).keys()].map(i => i + start);
+    return inputArray.map(x => computeFibonacciNumber(x));
+}
